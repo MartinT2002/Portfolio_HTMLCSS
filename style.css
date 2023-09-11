@@ -1,7 +1,39 @@
+body {
+
+}
+
 .banner {
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75)),url("images/background.jpg");
+    max-width: 200%;
+    height: 70vh;
+    background-image: url("images/background.jpg");
     background-size: cover;
     background-position: center;
 }
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #D3D0CB;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #2254a0;
+    text-transform: uppercase;
+}
+
+.logo {
+    width: 80px;
+    cursor: pointer;
+    border-radius: 20%;
+}
+
