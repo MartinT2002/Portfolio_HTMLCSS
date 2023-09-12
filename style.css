@@ -1,113 +1,185 @@
 * {
     margin: 0;
-    list-style: none;
-    text-decoration: none;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: montserrat;
-}
-
-nav {
-    background: #0082e6;
-    height: 80px;
     width: 100%;
+    height: 100vh;
+    background: linear-gradient( #3B3B3B, #2c3e50, #8ECDDD)
 }
 
-nav ul {
-    float: right;
-    margin-right: 10px;
+.header {
+    width: 100%;
+    height: 80px;
+    padding: 0 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-nav ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-}
-
-nav ul li a {
-    color: white;
-    font-size:  17px;
-    text-transform: uppercase;
-    padding: 7px 13px;
-    border-radius: 3px;
-}
-
-a.active,a:hover {
-    background: #1b9bff;
-    transition: .5s;
-}
-
-.checkbutton {
-    font-size: 25px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
+label {
+    color: #fff;
+    font-size: 20px;
     cursor: pointer;
-    display: none;
+    margin-left: 50px;
+    display: flex; /* Use flexbox to align label and checkbox */
+    
 }
 
-#check {
-    display: none;
+
+.check, .toggle-cross {
+    width: 42px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
 }
 
-@media (max-width: 952px) {
-    label.logo {
-        font-size: 30px;
-        padding-left: 50px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-
-    }
+.check {
+    z-index: 4; 
+    opacity: 0;
+    cursor: pointer;
 }
 
-@media (max-width: 858px) {
-    .checkbutton {
-        display:block;
-    }
-    ul {
-        position: fixed;
-        width: 100%;
-        height: 22vh;
-        background: #2c3e50;
-        top: 80px;
-        transform: 0;
-        padding-right: 25px;
-        text-align: center;
-        transition: all .5s;
-    }
-    nav ul li {
-        display: block;
-        margin: 20px 0;
-        line-height: 20px;
-    }
-    nav ul li a {
-        font-size: 20px;
-    }
-    a:hover, a.active {
-        background: none;
-        color: #0082e6
-    }
-    #check:checked ~ ul {
-        left: 0;
-    }
-
+.toggle-cross {
+    z-index: 3;
 }
 
-label.logo {
-    color: white;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 50px;
-    font-weight: bold;
+.line {
+    position: absolute;
+    width: 40px;;
+    height: 6px;
+    background: #fff;
+    transform-origin: center;
+    border-radius: 2.25px;
+    transition: 0.5s all linear;
 }
 
-section {
-    background: url(images/background.jpg) no-repeat;
+.ln1 {
+    top: 0;
+}
+
+.ln2{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ln3 {
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.check:checked ~ .toggle-cross .ln1 {
+    top: 50%;
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+
+.check:checked ~ .toggle-cross .ln2 {
+    width: 0;
+    opacity: 0;
+}
+
+.check:checked ~ .toggle-cross .ln3 {
+    top: 50%;
+    transform: translate(0, -50%) rotate(-45deg);
+}
+
+.heading {
+    color: #fff;
+    margin-left: auto; /* Push the heading to the right */
+    margin-right: auto; /* Push the heading to the left */
+    padding-right: 100px;
+    
+}
+
+.menu {
+    color: #fff;
+    width: 50%;
+    height: 100vh;
+    list-style: none;
+    background: #3B3B3B;
+    position: absolute;
+    left: -50%;
+    top: 0;
+    z-index: 2;
+    padding-top: 80px;
+    padding-left: 40px;
+    opacity: 0.5;
+    transition: 0.5s all linear;
+}
+
+.menu li {
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.check:checked ~ .menu {
+    left: 0;
+    opacity: 1;
+}
+
+.introduction {
+    text-align: center;
+    color: #fff;
+    justify-content: center;
+    display: flex;
+    padding-top: 200px;
+    font-size: 20px;
+}
+
+.about {
+    max-width: 250px;
+}
+
+.intro {
+    height: 100vh;
+    background: url(images/bg.jpg) no-repeat;
     background-size: cover;
-    height: calc(100vh - 80px);
+    background-position: center;
 }
+
+.info1 {
+    color: #fff;
+    height: 700px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+.info2 {
+    color: #000;
+    height: 700px;
+    background: url(images/img2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    padding-top: 150px;
+    font-size: 18px;
+}
+
+.info3 {
+    color: #fff;
+    height: 700px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    padding-top: 150px;
+    font-size: 18px;
+}
+
+.img3 {
+    border-radius: 30%;
+}
+
+
