@@ -47,6 +47,11 @@ label {
     
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 
 .check, .toggle-cross {
     width: 42px;
@@ -145,11 +150,14 @@ label {
 }
 
 .introduction {
+    width:50%;
     text-align: center;
     color: #fff;
     justify-content: center;
     display: flex;
-    padding-top: 200px;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 20px;
 }
 
@@ -167,6 +175,7 @@ label {
     background: url(images/bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
+
 }
 
 .info1 {
@@ -178,6 +187,7 @@ label {
     text-align: center; 
     padding-top: 30px;
     font-size: 18px;
+    filter:none;
 }
 
 .info1 h2 {
